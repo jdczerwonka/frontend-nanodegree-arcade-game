@@ -120,12 +120,12 @@ var Engine = (function(global) {
         ctx.clearRect(0, 0, COL_WIDTH * COL_NUM, 606);
 
         var rowImages = [
-                'images/grass-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/stone-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/grass-block.png',   // Top row is grass
+                'images/stone-block.png',   // Row 1 of 4 of stone
+                'images/stone-block.png',   // Row 2 of 4 of stone
+                'images/stone-block.png',   // Row 3 of 4 of stone
+                'images/stone-block.png',   // Row 4 of 4 of stone
+                'images/grass-block.png'    // Last row is grass
             ];
 
         /* Loop through the number of rows and columns we've defined above
@@ -188,7 +188,8 @@ var Engine = (function(global) {
         'images/char-boy.png',
         'images/Gem Blue.png',
         'images/Gem Green.png',
-        'images/Gem Orange.png'
+        'images/Gem Orange.png',
+        'images/Heart.png'
     ]);
     Resources.onReady(init);
 
