@@ -19,6 +19,7 @@ var Engine = (function(global) {
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
+     "use strict";
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
@@ -64,11 +65,11 @@ var Engine = (function(global) {
             ctx.strokeStyle = "black";
             ctx.fillStyle = "red";
 
-            ctx.textAlign = "center"
+            ctx.textAlign = "center";
             ctx.fillText("GAME OVER!", (COL_WIDTH * COL_NUM) / 2, 303);
             ctx.strokeText("GAME OVER!", (COL_WIDTH * COL_NUM) / 2, 303);
         }
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -209,9 +210,9 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-        'images/Gem Blue.png',
-        'images/Gem Green.png',
-        'images/Gem Orange.png',
+        'images/gem-lue.png',
+        'images/gem-green.png',
+        'images/gem-orange.png',
         'images/Heart.png'
     ]);
     Resources.onReady(init);
