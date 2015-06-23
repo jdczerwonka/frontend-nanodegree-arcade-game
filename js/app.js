@@ -84,10 +84,8 @@ Game.prototype.inc_life = function(){
 
 // This function decrements lives by 1.
 Game.prototype.dec_life = function(){
+    
     this.lives--;
-    if(this.lives < 1){
-        console.log("GAME OVER!!");
-    }
 }
 
 // This function determines how many seconds have passed since the
