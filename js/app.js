@@ -88,9 +88,17 @@ Game.prototype.inc_life = function(){
 
 // This function decrements lives by 1.
 Game.prototype.dec_life = function(){
+<<<<<<< HEAD
     "use strict";
     this.lives--;
 };
+=======
+    this.lives--;
+    if(this.lives < 1){
+        console.log("GAME OVER!!");
+    }
+}
+>>>>>>> parent of 775388d... Frogger Game Over and Readme
 
 // This function determines how many seconds have passed since the
 // game started.
