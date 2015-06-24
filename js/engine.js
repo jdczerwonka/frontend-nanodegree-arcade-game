@@ -19,6 +19,7 @@ var Engine = (function(global) {
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
+     "use strict";
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
@@ -64,11 +65,11 @@ var Engine = (function(global) {
             ctx.strokeStyle = "black";
             ctx.fillStyle = "red";
 
-            ctx.textAlign = "center"
+            ctx.textAlign = "center";
             ctx.fillText("GAME OVER!", (COL_WIDTH * COL_NUM) / 2, 303);
             ctx.strokeText("GAME OVER!", (COL_WIDTH * COL_NUM) / 2, 303);
         }
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -143,8 +144,8 @@ var Engine = (function(global) {
          * and, using the rowImages array, draw the correct image for that
          * portion of the "grid"
          */
-        for (row = 0; row < ROW_NUM; row++) {
-            for (col = 0; col < COL_NUM; col++) {
+        for (var row = 0; row < ROW_NUM; row++) {
+            for (var col = 0; col < COL_NUM; col++) {
                 /* The drawImage function of the canvas' context element
                  * requires 3 parameters: the image to draw, the x coordinate
                  * to start drawing and the y coordinate to start drawing.
@@ -184,19 +185,6 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        if(game_state.lives < 1){
-            allEnemies = [];
-            allRewards = [];
-
-            ctx.font = "60pt Impact";
-            ctx.lineWidth = 1.5;
-            ctx.strokeStyle = "black";
-            ctx.fillStyle = "red";
-
-            ctx.textAlign = "center"
-            ctx.fillText("GAME OVER", COL_WIDTH * Math.floor(COL_NUM / 2), 303);
-            ctx.strokeText("GAME OVER", COL_WIDTH * Math.floor(COL_NUM / 2), 303);
-        }
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -209,9 +197,9 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-        'images/Gem Blue.png',
-        'images/Gem Green.png',
-        'images/Gem Orange.png',
+        BLUE_GEM_URL,
+        GREEN_GEM_URL,
+        ORANGE_GEM_URL,
         'images/Heart.png'
     ]);
     Resources.onReady(init);
