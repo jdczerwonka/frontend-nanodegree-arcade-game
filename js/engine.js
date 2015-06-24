@@ -57,7 +57,6 @@ var Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-<<<<<<< HEAD
         if(game_state.lives > 0){
             win.requestAnimationFrame(main);
         } else {
@@ -71,10 +70,6 @@ var Engine = (function(global) {
             ctx.strokeText("GAME OVER!", (COL_WIDTH * COL_NUM) / 2, 303);
         }
     }
-=======
-        win.requestAnimationFrame(main);
-    };
->>>>>>> parent of 775388d... Frogger Game Over and Readme
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -190,7 +185,19 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        if(game_state.lives < 1){
+            allEnemies = [];
+            allRewards = [];
+
+            ctx.font = "60pt Impact";
+            ctx.lineWidth = 1.5;
+            ctx.strokeStyle = "black";
+            ctx.fillStyle = "red";
+
+            ctx.textAlign = "center"
+            ctx.fillText("GAME OVER", COL_WIDTH * Math.floor(COL_NUM / 2), 303);
+            ctx.strokeText("GAME OVER", COL_WIDTH * Math.floor(COL_NUM / 2), 303);
+        }
     }
 
     /* Go ahead and load all of the images we know we're going to need to
